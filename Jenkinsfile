@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 script {
-                    sh 'g++ -o output program.cpp'  // Compile C++ file
+                    sh 'g++ -o output program_wrong.cpp'  // Intentional error: wrong filename
                 }
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh './output'  // Run the compiled file
+                    sh './output'
                 }
             }
         }
